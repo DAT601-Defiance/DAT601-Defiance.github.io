@@ -15,10 +15,10 @@ function setup() {
   //var canvas = createCanvas(windowWidth, windowHeight); // the canvas siz
   canvas.parent("canvasContainer");
   pixelDensity(1);
-  createCanvas(w, h);
+  createCanvas(windowWidth, windowHeight);
   black = color(155);
   alphaC = color(0,0);
-  layer = createGraphics(w, h);
+  layer = createGraphics(windowWidth, windowHeight);
   background(255);
   layer.fill("red");
   layer.rect(0,0,windowWidth,windowHeight);
