@@ -35,7 +35,7 @@ function draw() {
   if (mouseIsPressed) {
     noFill();
     stroke("gray");
-    ellipse(mouseX, mouseY, rad*2, rad*2);
+    ellipse(mouseX, mouseY, rad*4, rad*4);
     line(mouseX - 10, mouseY, mouseX+10, mouseY);
     line(mouseX, mouseY-10, mouseX, mouseY+10);
   }
@@ -44,7 +44,7 @@ function draw() {
 function mouseDragged() {
   for (var x = mouseX - rad; x < mouseX+rad; x++) {
     for (var y = mouseY - rad; y < mouseY+rad; y++) {
-      if ((dist(x,y, mouseX, mouseY) < rad) && x > 0 && x <= width) {
+      if ((dist(x,y, mouseX, mouseY) < rad) && x > 0 && x <= windowWidth) {
         layer.set(x,y,alphaC);
       }
     }
