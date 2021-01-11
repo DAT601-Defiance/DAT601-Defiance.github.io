@@ -35,7 +35,7 @@ function draw() {
   if (mouseIsPressed) {
     noFill();
     stroke("gray");
-    ellipse(mouseX, mouseY, rad*4, rad*4);
+    ellipse(mouseX, mouseY, rad*2, rad*2);
     line(mouseX - 10, mouseY, mouseX+10, mouseY);
     line(mouseX, mouseY-10, mouseX, mouseY+10);
   }
