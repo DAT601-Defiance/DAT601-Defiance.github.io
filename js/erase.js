@@ -13,7 +13,7 @@ var mouseIsDragged = false;
 
 function setup() {
   //var canvas = createCanvas(windowWidth, windowHeight); // the canvas siz
-  canvas.parent("canvasContainer");
+  //canvas.parent("canvasContainer");
   pixelDensity(1);
   createCanvas(w, h);
   black = color(155);
