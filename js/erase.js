@@ -12,6 +12,7 @@ var w = 500, h = 600;
 var mouseIsDragged = false;
 
 function setup() {
+  canvas.parent("canvasContainer");
   pixelDensity(1);
   createCanvas(w, h);
   black = color(155);
