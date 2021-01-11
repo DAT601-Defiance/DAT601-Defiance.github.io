@@ -15,7 +15,7 @@ function setup() {
   var canvas = createCanvas(windowWidth, windowHeight); // the canvas siz
   canvas.parent("canvasContainer");
   pixelDensity(1);
-  createCanvas(w, h);
+  //createCanvas(w, h);
   black = color(155);
   alphaC = color(0,0);
   layer = createGraphics(w, h);
