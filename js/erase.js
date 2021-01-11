@@ -21,7 +21,7 @@ function setup() {
   layer = createGraphics(windowWidth, windowHeight);
   background(255);
   layer.fill("red");
-  layer.rect(windowWidth,windowHeight, windowWidth,windowHeight);
+  layer.rect(100, 100,windowWidth,windowHeight);
 }
 
 function draw() {
