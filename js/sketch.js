@@ -23,7 +23,7 @@ function setup() {
   black = color(400);
   alphaC = color(0,0);
   layer = createGraphics(w, h);
-  background(255);
+  background(220);
   layer.fill("green");
   layer.rect(0,0,width,height);
 }
