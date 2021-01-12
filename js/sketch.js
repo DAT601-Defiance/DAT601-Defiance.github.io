@@ -19,7 +19,7 @@ function setup() {
   alphaC = color(0,0);
   layer = createGraphics(w, h);
   background(255);
-  layer.fill("red");
+  layer.fill("green");
   layer.rect(0,0,width,height);
 }
 
