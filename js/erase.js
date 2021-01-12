@@ -16,23 +16,14 @@ clear();
   toggleBtn.position(30, 60);
   toggleBtn.mouseClicked(toggleErase);
 
-  strokeWeight(10);
-  stroke(0);
-}
-
-function touchMoved() {
-  line(mouseX, mouseY, pmouseX, pmouseY);
-  return false;
-}
-
-function mouseIsPressed() {
-  fill('blue');
-  noStroke();
-  circle(mouseX, mouseY, 50);
 }
 
 function draw() {
   image(vid, 1, 1); // draw the video frame to canvas
+}
+
+function vidLoad() {
+  vid.loop();
 }
 
 function toggleErase() {
@@ -46,6 +37,8 @@ function toggleErase() {
   }
 }
 
-function vidLoad() {
-  vid.loop();
+function mouseMoved() {
+  fill('blue');
+  noStroke();
+  circle(mouseX, mouseY, 100);
 }

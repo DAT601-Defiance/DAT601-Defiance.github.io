@@ -11,18 +11,36 @@ clear();
 
   vid= createVideo(['assets/img/Code.mp4'],vidLoad);
   vid.hide();
-  image(vid, 1, 1); // draw the video frame to canvas
 
   toggleBtn = createButton("Toggle erase");
   toggleBtn.position(30, 60);
   toggleBtn.mouseClicked(toggleErase);
 
-  strokeWeight(10);
-  stroke(0);
 }
 
-function vidLoad() {
-  vid.loop();
+function mouse() {
+  fill('blue');
+  noStroke();
+  circle(mouseX, mouseY, 50);
+}
+
+
+function draw() {
+  image(vid, 1, 1); // draw the video frame to canvas
+
+  // if (mouseIsPressed) {
+  //     background();
+  //     blue();
+  //   } else {
+  //     blue();
+  //     background();
+  //   }
+
+  // stroke(0);
+  // if (mouseIsPressed === true) {
+  //   line(mouseX, mouseY, pmouseX, pmouseY);
+  // }
+  // image(vid, 1, 1); // draw the video frame to canvas
 }
 
 function toggleErase() {
@@ -36,8 +54,6 @@ function toggleErase() {
   }
 }
 
-function mouseMoved() {
-  fill('blue');
-  noStroke();
-  circle(mouseX, mouseY, 50);
+function vidLoad() {
+  vid.loop();
 }
