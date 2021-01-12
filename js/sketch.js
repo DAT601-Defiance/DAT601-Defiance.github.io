@@ -7,7 +7,7 @@ var alphaC;
 var layer;
 var rad = 100;
 
-var w = 500, h = 600;
+var w = windowWidth, h = windowHeight;
 
 var mouseIsDragged = false;
 
