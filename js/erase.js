@@ -42,3 +42,7 @@ function mouseMoved() {
   noStroke();
   circle(mouseX, mouseY, 100);
 }
+
+function vidLoad() {
+  vid.loop();
+}

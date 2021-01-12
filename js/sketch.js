@@ -1,59 +1,68 @@
-let eraseEnable = false;
 //Assigning the variabels
 var vid;
+var layer;
+var rad = 100;
+var title
+//starting the mouse as false
+var mouseIsDragged = false;
+
 
 //inital setup
 function setup() {
   //Lets the canvas be the size of the screening causing it to be resonsive
   var canvas = createCanvas(windowWidth, windowHeight);
-clear();
+  //Allows the P5.js code to show in the HTML
   canvas.parent("canvasContainer");
+  //Defining that W and H should also be responsive to the window size
+  var w = windowWidth, h = windowHeight;
 
   vid= createVideo(['assets/img/Code.mp4'],vidLoad);
-  vid.hide();
+  vid.hide()
 
-  toggleBtn = createButton("Toggle erase");
-  toggleBtn.position(30, 60);
-  toggleBtn.mouseClicked(toggleErase);
+  title = text("Welcome", width/2, height/2);
 
+  pixelDensity(1);
+  //this creates the layer that goes over the top of the background
+  layer = createGraphics(w, h);
+  layer.fill("green");
+  layer.rect(0,0,width,height);
 }
-
-function mouse() {
-  fill('blue');
-  noStroke();
-  circle(mouseX, mouseY, 50);
-}
-
 
 function draw() {
-  image(vid, 1, 1); // draw the video frame to canvas
+  noStroke();
+  for (var i = 0; i < 10; i++) {
+    fill(i*20);
+    rect(i*width/10, 0, width/10, height)
+  }
+  image(layer, 0, 0);
 
-  // if (mouseIsPressed) {
-  //     background();
-  //     blue();
-  //   } else {
-  //     blue();
-  //     background();
-  //   }
 
-  // stroke(0);
-  // if (mouseIsPressed === true) {
-  //   line(mouseX, mouseY, pmouseX, pmouseY);
-  // }
-  // image(vid, 1, 1); // draw the video frame to canvas
+
+  if (mouseIsPressed) {
+    noFill();
+    stroke("red");
+    ellipse(mouseX, mouseY, rad*2, rad*2);
+    line(mouseX - 10, mouseY, mouseX+10, mouseY);
+    line(mouseX, mouseY-10, mouseX, mouseY+10);
+  }
 }
 
-function toggleErase() {
-  if (eraseEnable) {
-    noErase();
-    eraseEnable = false;
+function mouseDragged() {
+  for (var x = mouseX - rad; x < mouseX+rad; x++) {
+    for (var y = mouseY - rad; y < mouseY+rad; y++) {
+      if ((dist(x,y, mouseX, mouseY) < rad) && x > 0 && x <= width) {
+        layer.set(x,y,vid);
+      }
+    }
   }
-  else {
-    erase();
-    eraseEnable = true;
-  }
+  layer.updatePixels();
 }
 
 function vidLoad() {
   vid.loop();
+  vid.volume(0);
+}
+
+function thanks(){
+
 }
