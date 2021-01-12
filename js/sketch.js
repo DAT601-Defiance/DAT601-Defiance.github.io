@@ -6,6 +6,7 @@ var vid;
 function setup() {
   //Lets the canvas be the size of the screening causing it to be resonsive
   var canvas = createCanvas(windowWidth, windowHeight);
+clear();
   canvas.parent("canvasContainer");
 
   vid= createVideo(['assets/img/Code.mp4'],vidLoad);
@@ -14,6 +15,14 @@ function setup() {
   toggleBtn = createButton("Toggle erase");
   toggleBtn.position(30, 60);
   toggleBtn.mouseClicked(toggleErase);
+
+  strokeWeight(10);
+  stroke(0);
+}
+
+function touchMoved() {
+  line(mouseX, mouseY, pmouseX, pmouseY);
+  return false;
 }
 
 function mouseIsPressed() {
