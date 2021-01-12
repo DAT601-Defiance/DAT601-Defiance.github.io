@@ -1,53 +1,51 @@
-document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
-    }, false);
+let eraseEnable = false;
+//Assigning the variabels
+var vid;
 
-var black;
-var alphaC;
-var layer;
-var rad = 100;
-
-var w = 500, h = 600;
-
-var mouseIsDragged = false;
-
+//inital setup
 function setup() {
-  var canvas = createCanvas(windowWidth, windowHeight); // the canvas siz
+  //Lets the canvas be the size of the screening causing it to be resonsive
+  var canvas = createCanvas(windowWidth, windowHeight);
+clear();
   canvas.parent("canvasContainer");
-  pixelDensity(1);
-  //createCanvas(w, h);
-  black = color(155);
-  alphaC = color(0,0);
-  layer = createGraphics(w, h);
-  background(255);
-  layer.fill("red");
-  layer.rect(0,0,width,height);
+
+  vid= createVideo(['assets/img/Code.mp4'],vidLoad);
+  vid.hide();
+
+  toggleBtn = createButton("Toggle erase");
+  toggleBtn.position(30, 60);
+  toggleBtn.mouseClicked(toggleErase);
+
+  strokeWeight(10);
+  stroke(0);
+}
+
+function touchMoved() {
+  line(mouseX, mouseY, pmouseX, pmouseY);
+  return false;
+}
+
+function mouseIsPressed() {
+  fill('blue');
+  noStroke();
+  circle(mouseX, mouseY, 50);
 }
 
 function draw() {
-  noStroke();
-  for (var i = 0; i < 10; i++) {
-    fill(i*25);
-    rect(i*width/10, 0, width/10, height)
-  }
-  image(layer, 0, 0);
+  image(vid, 1, 1); // draw the video frame to canvas
+}
 
-  if (mouseIsPressed) {
-    noFill();
-    stroke("gray");
-    ellipse(mouseX, mouseY, rad*2, rad*2);
-    line(mouseX - 10, mouseY, mouseX+10, mouseY);
-    line(mouseX, mouseY-10, mouseX, mouseY+10);
+function toggleErase() {
+  if (eraseEnable) {
+    noErase();
+    eraseEnable = false;
+  }
+  else {
+    erase();
+    eraseEnable = true;
   }
 }
 
-function mouseDragged() {
-  for (var x = mouseX - rad; x < mouseX+rad; x++) {
-    for (var y = mouseY - rad; y < mouseY+rad; y++) {
-      if ((dist(x,y, mouseX, mouseY) < rad) && x > 0 && x <= width) {
-        layer.set(x,y,alphaC);
-      }
-    }
-  }
-  layer.updatePixels();
+function vidLoad() {
+  vid.loop();
 }

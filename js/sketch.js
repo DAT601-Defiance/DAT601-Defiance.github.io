@@ -11,6 +11,7 @@ clear();
 
   vid= createVideo(['assets/img/Code.mp4'],vidLoad);
   vid.hide();
+  image(vid, 1, 1); // draw the video frame to canvas
 
   toggleBtn = createButton("Toggle erase");
   toggleBtn.position(30, 60);
@@ -20,19 +21,8 @@ clear();
   stroke(0);
 }
 
-function touchMoved() {
-  line(mouseX, mouseY, pmouseX, pmouseY);
-  return false;
-}
-
-function mouseIsPressed() {
-  fill('blue');
-  noStroke();
-  circle(mouseX, mouseY, 50);
-}
-
-function draw() {
-  image(vid, 1, 1); // draw the video frame to canvas
+function vidLoad() {
+  vid.loop();
 }
 
 function toggleErase() {
@@ -46,6 +36,8 @@ function toggleErase() {
   }
 }
 
-function vidLoad() {
-  vid.loop();
+function mouseMoved() {
+  fill('blue');
+  noStroke();
+  circle(mouseX, mouseY, 50);
 }
