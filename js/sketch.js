@@ -19,9 +19,11 @@ function setup() {
   canvas.parent("canvasContainer");
   //Defining that W and H should also be responsive to the window size
   var w = windowWidth, h = windowHeight;
+  title = text("Welcome", width/2, height/2);
   pixelDensity(1);
   black = color(400);
   alphaC = color(0,0);
+  //this creates the layer that goes over the top of the background
   layer = createGraphics(w, h);
   background(220);
   layer.fill("green");
@@ -54,4 +56,8 @@ function mouseDragged() {
     }
   }
   layer.updatePixels();
+}
+
+function thanks(){
+
 }
