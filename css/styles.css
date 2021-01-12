@@ -1,3 +1,7 @@
+body {
+  background= "assets/img/brickwall.jpg";
+}
+
 div {
   display: flex;
   justify-content: center;
