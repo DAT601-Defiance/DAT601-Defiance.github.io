@@ -1,21 +1,26 @@
+//
 document.addEventListener("contextmenu", function (e) {
         e.preventDefault();
     }, false);
 
+//Assigning the variabels
 var black;
 var alphaC;
 var layer;
 var rad = 100;
-
+//starting the mouse as false
 var mouseIsDragged = false;
 
+//inital setup
 function setup() {
-  var canvas = createCanvas(windowWidth, windowHeight); // the canvas siz
+  //Lets the canvas be the size of the screening causing it to be resonsive
+  var canvas = createCanvas(windowWidth, windowHeight);
+  //Allows the P5.js code to show in the HTML
   canvas.parent("canvasContainer");
+  //Defining that W and H should also be responsive to the window size
   var w = windowWidth, h = windowHeight;
   pixelDensity(1);
-  //createCanvas(w, h);
-  black = color(155);
+  black = color(400);
   alphaC = color(0,0);
   layer = createGraphics(w, h);
   background(255);
