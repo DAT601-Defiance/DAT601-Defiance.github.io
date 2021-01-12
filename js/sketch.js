@@ -12,7 +12,7 @@ var w = windowWidth, h = windowHeight;
 var mouseIsDragged = false;
 
 function setup() {
-  //var canvas = createCanvas(windowWidth, windowHeight); // the canvas siz
+  var canvas = createCanvas(windowWidth, windowHeight); // the canvas siz
   canvas.parent("canvasContainer");
   var w = windowWidth, h = windowHeight;
   pixelDensity(1);
