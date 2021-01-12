@@ -5,7 +5,7 @@ document.addEventListener("contextmenu", function (e) {
 var black;
 var alphaC;
 var layer;
-var rad = 100;
+var rad = 1000;
 
 var w = windowWidth, h = windowHeight;
 
