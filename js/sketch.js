@@ -69,7 +69,6 @@ function mouseDragged(){
         layer.set(x,y,alphaC);
       }
     }
-  }
   //updating our pixels stored in the buffer in order to display the change
   layer.updatePixels();
 }
