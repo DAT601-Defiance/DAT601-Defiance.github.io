@@ -62,13 +62,14 @@ function mouseDragged(){
 
 //double for loop to calculate the radius on x and y axis around the point of the mouse
   for (var x = mouseX - rad; x < mouseX+rad; x++) {
-    for (var y = mouseY - rad; y < mouseY+rad; y++)
+    for (var y = mouseY - rad; y < mouseY+rad; y++){
       //using the distance function to caculate distance around the mouse
       if ((dist(x,y, mouseX, mouseY) < rad) && x > 0 && x <= width) {
         //setting our layer pixels to the zero alpha colour at the x and y mouse location
         layer.set(x,y,alphaC);
       }
     }
+  }
   //updating our pixels stored in the buffer in order to display the change
   layer.updatePixels();
 }
