@@ -10,4 +10,5 @@ function mouseMoved() {
   fill('red');
   noStroke();
   circle(mouseX, mouseY, 10);
+  
 }
