@@ -37,7 +37,7 @@ alphaC = color(0,0)
   layer.background(29,112,184);
   layer.noStroke();
 //setting the text to be displayed, with the size and colour
-  var myText = "Thank you for being compliant";
+  var myText = "Thank you for      being compliant";
   layer.textSize(60);
   layer.fill(255);
   //calling on the text into the layer and setting it to the center.
