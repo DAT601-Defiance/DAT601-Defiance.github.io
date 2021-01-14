@@ -4,11 +4,12 @@ var vid;
 //Layer overlay
 var layer;
 //the size of the circle that will delete one layer
-var rad = 100;
+var rad = 50;
 //creates the erase effect
 var alphaC;
 //starting the mouse as false
 var mouseIsDragged = false;
+
 
 //inital setup
 function setup() {
@@ -17,7 +18,7 @@ function setup() {
   //Allows the P5.js code to show in the HTML
   canvas.parent("canvasContainer");
 //setting the pixel density
-  pixelDensity(1);
+  // pixelDensity(1);
 
   //Defining that W and H should also be responsive to the window size
   var w = windowWidth, h = windowHeight;
@@ -37,10 +38,10 @@ alphaC = color(0,0)
   layer.noStroke();
 //setting the text to be displayed, with the size and colour
   var myText = "Thank you for being compliant";
-  layer.textSize(50);
+  layer.textSize(60);
   layer.fill(255);
   //calling on the text into the layer and setting it to the center.
-  layer.text(myText, layer.width/2-30, layer.height/2-30,100,100);
+  layer.text(myText, layer.width/2-250, layer.height/2-250,500,500);
 }
 
 //allows the video to load also setting it to continuously play as well as setting the volume to 0.
@@ -48,6 +49,10 @@ function vidLoad() {
   vid.loop();
   vid.volume(0);
 }
+
+// function goTolink(){
+//   window.open('');
+// }
 
 function draw() {
 
