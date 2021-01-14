@@ -3,12 +3,16 @@ function setup() {
   var canvas = createCanvas(windowWidth, windowHeight);
   //Allows the P5.js code to show in the HTML
   canvas.parent("canvasContainer");
-  //setting the pixel density
 }
 
 function mouseMoved() {
+  //setting the colour to red
   fill('red');
+  //no outline
   noStroke();
+  //A circle to follow your mouse to allow you to draw
   circle(mouseX, mouseY, 30);
-
 }
+
+//WITH THANKS TO.....
+//https://www.geeksforgeeks.org/p5-js-erase-function/ 
